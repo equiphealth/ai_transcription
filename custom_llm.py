@@ -9,7 +9,6 @@ class CustomLLM(BaseModel):
     """
     model: str
     temperature: float = 0.3
-    #transcript: str
 
     class Config:
         arbitary_types_allowed = False

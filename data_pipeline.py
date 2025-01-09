@@ -126,7 +126,7 @@ class DataPipeline():
         df = wr.athena.get_query_results(query_execution_id=query_exec_id)
         return df
     @staticmethod
-    def post_process(dictionary_records, summ, prompt, eval, transcript_name, elapsed_time):
+    def post_process(dictionary_records, summ, prompt, eval_correctness, eval_conciseness, transcript_name, elapsed_time):
         """
         Post-process the generated summary.
 
@@ -144,8 +144,10 @@ class DataPipeline():
         df = pd.DataFrame({k: [v] for k, v in dictionary_records.items()})
         df['llm_note_summary'] =  summ
         df['prompt'] = prompt
-        df['eval_score'] = eval.score
-        df['eval_reason'] = eval.reason
+        df['eval_correct_score'] = eval_correctness.score
+        df['eval_correct_reason'] = eval_correctness.reason
+        df['eval_concise_score'] = eval_conciseness.score
+        df['eval_concise_reason'] = eval_conciseness.reason
         df['transcript_file_name'] = transcript_name
         df['time_summary'] = elapsed_time
         return(df)
