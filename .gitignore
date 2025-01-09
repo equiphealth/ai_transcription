@@ -5,3 +5,6 @@ prompts/*
 .ipynb_checkpoints/*
 /.env
 .venv/*
+.deepeval_telemtry.txt
+.idea
+.DS_Store
