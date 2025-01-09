@@ -1,0 +1,8 @@
+dev: false
+bucket:
+      transcript_output: s3://equip-data-prod/lakehouse/secure_dev_staging/session_transcription/transcript_output/
+      transcripts: s3://equip-data-prod/lakehouse/secure_dev_staging/session_transcription/transcripts/
+      prompts: s3://equip-data-prod/lakehouse/secure_dev_staging/session_transcription/prompts/
+      embeddings: s3://equip-data-prod/lakehouse/secure_dev_staging/session_transcription/embeddings/
+metadata_usage: false
+zoomdata_usage: true

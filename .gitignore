@@ -1,0 +1,8 @@
+transcripts/*
+test_transcript/*
+metadata/*
+notebooks/*
+prompts/*
+.ipynb_checkpoints/*
+/.env
+.venv/*
